@@ -107,13 +107,19 @@ if not alert_report_df.empty:
 st.caption("Notification Preview")
 st.write(generate_notification_message(alert_report_df))
 
-if st.button("Generate Alert Report"):
-    saved_report_path = save_alert_report(alert_report_df)
-    if alert_report_df.empty:
-        st.success(f"Alert report created at {saved_report_path}. No urgent cases were included.")
-    else:
-        st.success(f"Alert report saved to {saved_report_path}.")
+col1, col2, col3 = st.columns([1,1,6])
 
+with col1:
+    if st.button("Generate Alert Report",  type="primary"):
+        saved_report_path = save_alert_report(alert_report_df)
+
+with col2:
+    st.download_button(
+        "Download Alert Report",
+        data=alert_report_df.to_csv(index=False),
+        file_name="alert_report.csv",
+        mime="text/csv"
+    )
 
 st.subheader("All Cases")
 all_cases_display = filtered_df[DISPLAY_COLUMNS].copy()
