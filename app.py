@@ -8,6 +8,11 @@ from deadline_utils import (
     get_summary_counts,
     load_cases,
 )
+from notifier import (
+    build_alert_report,
+    generate_notification_message,
+    save_alert_report,
+)
 
 
 CSV_PATH = "data/sample_ip_cases.csv"
@@ -79,6 +84,35 @@ if selected_flag != "All":
     filtered_df = filtered_df[filtered_df["deadline_flag"] == selected_flag]
 
 filtered_df = filtered_df.sort_values("next_deadline", ascending=True)
+
+alert_report_df = build_alert_report(filtered_df)
+overdue_count = int((alert_report_df["deadline_flag"] == "Overdue").sum())
+due_soon_count = int((alert_report_df["deadline_flag"] == "Due Soon").sum())
+
+
+st.subheader("Alert Center")
+
+if overdue_count > 0:
+    st.warning(f"{overdue_count} overdue case(s) need immediate attention.")
+elif due_soon_count > 0:
+    st.info(f"{due_soon_count} due soon case(s) should be reviewed this week.")
+else:
+    st.success("There are no urgent deadline alerts in the current view.")
+
+if not alert_report_df.empty:
+    urgent_cases_display = alert_report_df.copy()
+    urgent_cases_display["next_deadline"] = urgent_cases_display["next_deadline"].dt.strftime("%Y-%m-%d")
+    st.dataframe(urgent_cases_display, use_container_width=True)
+
+st.caption("Notification Preview")
+st.write(generate_notification_message(alert_report_df))
+
+if st.button("Generate Alert Report"):
+    saved_report_path = save_alert_report(alert_report_df)
+    if alert_report_df.empty:
+        st.success(f"Alert report created at {saved_report_path}. No urgent cases were included.")
+    else:
+        st.success(f"Alert report saved to {saved_report_path}.")
 
 
 st.subheader("All Cases")
