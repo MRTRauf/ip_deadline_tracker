@@ -1,0 +1,25 @@
+case_id;jurisdiction;title;status;filing_date;next_deadline;owner
+IP-001;US;Water Treatment Polymer;Filed;10/01/2025;12/03/2026;Alice
+IP-002;EP;Paper Coating Process;Examination;02/11/2024;08/03/2026;Bob
+IP-003;WO;Pulp Additive Method;Granted;15/06/2023;15/06/2026;Clara
+IP-004;JP;Retention Aid Formula;Filed;18/02/2025;01/04/2026;Diana
+IP-005;CN;Bio-Based Purification Polymer;Office Action;25/09/2024;05/03/2026;Eric
+IP-006;US;Industrial Cooling Inhibitor;Examination;14/08/2024;20/03/2026;Alice
+IP-007;EP;Bleaching Chemical Blend;Filed;01/03/2025;25/03/2026;Bob
+IP-008;IN;Paper Strength Additive;Granted;10/12/2022;10/12/2026;Clara
+IP-009;KR;Foam Control Agent;Filed;28/01/2025;18/03/2026;Diana
+IP-010;WO;Chemical Dosing Monitoring Method;Office Action;10/10/2024;07/03/2026;Eric
+IP-011;US;Corrosion Protection Formula;Filed;05/02/2025;15/04/2026;Alice
+IP-012;EP;Low-Residue Binder;Examination;21/07/2024;09/03/2026;Bob
+IP-013;BR;Pitch Deposit Reduction Process;Filed;03/03/2025;10/05/2026;Clara
+IP-014;CA;Recyclable Barrier Coating;Granted;19/04/2023;19/04/2026;Diana
+IP-015;AU;Water Reuse Treatment Aid;Office Action;12/12/2024;06/03/2026;Eric
+IP-016;US;Microbial Control Composition;Filed;22/01/2025;30/03/2026;Alice
+IP-017;EP;Enhanced Drainage Aid;Examination;30/06/2024;04/03/2026;Bob
+IP-018;JP;Lignin-Based Dispersant;Filed;27/02/2025;22/04/2026;Clara
+IP-019;CN;Wastewater Clarification Blend;Granted;01/09/2023;01/09/2026;Diana
+IP-020;WO;Chemical Usage Optimization Method;Office Action;18/11/2024;11/03/2026;Eric
+IP-021;US;Scale Prevention Additive;Filed;15/01/2025;14/03/2026;Alice
+IP-022;EP;Fiber Packaging Coating;Examination;05/09/2024;16/03/2026;Bob
+IP-023;SG;Process Water Stabilizer;Filed;09/02/2025;08/04/2026;Clara
+IP-024;DE;Defoamer Composition;Granted;11/08/2023;11/08/2026;Diana
