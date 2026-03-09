@@ -31,6 +31,35 @@ DISPLAY_COLUMNS = [
 
 st.set_page_config(page_title="IP Deadline Tracker", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    [data-testid="stMetric"] {
+        background: #f8fafc;
+        border: 1px solid #e4e7ec;
+        border-radius: 0.75rem;
+        padding: 0.85rem 1rem;
+    }
+    [data-testid="stMetricLabel"] {
+        font-weight: 600;
+    }
+    [data-testid="column"]:nth-of-type(2) [data-testid="stMetric"] {
+        background: #fef3f2;
+        border-color: #f3d0cc;
+    }
+    [data-testid="column"]:nth-of-type(3) [data-testid="stMetric"] {
+        background: #fff8e8;
+        border-color: #ead8b5;
+    }
+    [data-testid="column"]:nth-of-type(4) [data-testid="stMetric"] {
+        background: #eff8ff;
+        border-color: #bfdcff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("IP Deadline Tracker & Automation Dashboard")
 st.write(
     "A simple internal-tool prototype for monitoring patent and IP case deadlines, "
